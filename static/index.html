@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>KamiCake</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+        /* CSS */
+    </style>
+    <script>
+        /* JS */
+    </script>
+    <script src="https://keycdn.layerjs.org/libs/layerjs/layerjs-0.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://keycdn.layerjs.org/libs/layerjs/layerjs-0.6.4.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+    <!-- 'nano' theme -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+</head>
+<body onselectstart="return false">
+
+<div lj-type="stage" id="mainstage">
+
+    <div lj-type="layer" lj-name="slider" lj-default-frame="main" lj-native-scroll="false">
+
+        <div lj-type="frame" lj-name="welcome" lj-fit-to="responsive-width" lj-no-scrolling="true"
+             lj-start-position="center" lj-neighbors.r="login">
+            <h1>KamiCake</h1>
+            <h5>More effcient to fire danmaku</h5>
+            <!--            默认折叠的登录表单-->
+            <div lj-type="stage" class="collapse" lj-auto-height="true">
+                <div id="lcollapse" lj-type="layer" lj-default-frame="!none" lj-transition="inouttop">
+                    <div lj-type="frame" lj-name="frame1" lj-fit-to="responsive-width">
+                        <form>
+                            <fieldset>
+                                <svg id="usersvg" xmlns="http://www.w3.org/2000/svg"
+                                     class="icon icon-tabler icon-tabler-user"
+                                     width="15" height="15" viewBox="0 0 24 24" stroke-width="1.5" stroke="#606c76"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>
+                                </svg>
+                                <!--                                登录框用户名-->
+                                <input type="text" placeholder="邮箱或手机号" id="nameField" value="574657200@qq.com">
+                                <svg id="locksvg" xmlns="http://www.w3.org/2000/svg"
+                                     class="icon icon-tabler icon-tabler-lock"
+                                     width="15" height="15" viewBox="0 0 24 24" stroke-width="1.5" stroke="#606c76"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M8 11v-4a4 4 0 0 1 8 0v4"/>
+                                </svg>
+                                <!--                                登录框密码-->
+                                <input type="password" placeholder="密码" id="pwdField" value="kniainac">
+                                <svg id="eyesvgnosee" xmlns="http://www.w3.org/2000/svg"
+                                     class="icon icon-tabler icon-tabler-eye-off"
+                                     width="15" height="15" viewBox="0 0 24 24" stroke-width="1.5" stroke="#606c76"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <line x1="3" y1="3" x2="21" y2="21"/>
+                                    <path d="M10.584 10.587a2 2 0 0 0 2.828 2.83"/>
+                                    <path d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341"/>
+                                </svg>
+                                <svg id="eyesvgsee" xmlns="http://www.w3.org/2000/svg"
+                                     class="icon icon-tabler icon-tabler-eye"
+                                     width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#606c76"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                    <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"/>
+                                </svg>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <a href="#lcollapse.!next">
+                    <button id="btnLogin" onclick="">登录</button>
+                </a>
+            </p>
+
+        </div>
+
+        <div lj-type="frame" lj-name="main" lj-fit-to="responsive-width" lj-no-scrolling="false"
+             lj-start-position="top"
+             lj-neighbors.l="login">
+            <!--            <h1>主要功能界面</h1>-->
+            <form>
+                <fieldset>
+                    <p></p>
+                    <label for="dmkContent">弹幕内容</label>
+                    <textarea placeholder="…" id="dmkContent"></textarea>
+                    <label>字体设置</label>
+                    <div class="row">
+                        <div class="column">
+                            <select id="fontConfig">
+                                <option class="" value="SimHei">黑体</option>
+                                <option class="" value="SimSun">宋体</option>
+                                <option class="" value="FangSong">仿宋</option>
+                                <option class="" value="NSimSun">新宋体</option>
+                                <option class="" value="Microsoft YaHei">微软雅黑</option>
+                            </select>
+                        </div>
+                        <div class="column color-picker ">ColorPicker</div>
+                        <div class="column"><input id="fontSizeInput" type="number" step="1" min="12" max="500"
+                                                   placeholder="大小"/></div>
+
+                        <div class="column">
+                            <input type="checkbox" id="isstroke">
+                            <label class="label-inline" for="isstroke">描边</label>
+                            &nbsp; &nbsp;
+                            <input type="checkbox" id="isbold">
+                            <label class="label-inline" for="isbold">加粗</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <label class="label-inline" for="starttime">起始时间</label>
+                            <input id="starttime">
+                        </div>
+                        <div class="column">
+                            <label class="label-inline" for="dmkindex">弹幕层级</label>
+                            <input id="dmkindex" type="number" value="50">
+                        </div>
+                        <div class="column">
+                            <label class="label-inline" for="anchorpos">锚点位置</label>
+                            <select id="anchorpos">
+                                <option value="0">左上</option>
+                                <option value="1">中上</option>
+                                <option value="2">右上</option>
+                                <option value="3">左中</option>
+                                <option value="4">中中</option>
+                                <option value="5">右中</option>
+                                <option value="6">左下</option>
+                                <option value="7">中下</option>
+                                <option value="8">右下</option>
+                            </select>
+                            </option>
+                        </div>
+                    </div>
+                    <label>样式设置</label>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" id="rotate">
+                            <label class="label-inline" for="rotate">旋转</label>
+                        </div>
+                        <div class="column">
+                            <input id="rotate-x" type="number" placeholder="X">
+                        </div>
+                        <div class="column">
+                            <input id="rotate-y" type="number" placeholder="Y">
+                        </div>
+                        <div class="column">
+                            <input id="rotate-z" type="number" placeholder="Z">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" id="stretch">
+                            <label class="label-inline" for="stretch">拉伸变形</label>
+                        </div>
+                        <div class="column">
+                            <input id="stretch-x" type="number" placeholder="X">
+                        </div>
+                        <div class="column">
+                            <input id="stretch-y" type="number" placeholder="Y">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" id="blur">
+                            <label class="label-inline" for="blur">模糊</label>
+                        </div>
+                        <div class="column">
+                            高斯模糊 <input id="blur-value" type="range" step="1" max="10" min="0" value="0">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" id="outglow">
+                            <label class="label-inline" for="outglow">外发光</label>
+                        </div>
+                        <div class="column">
+                            <input id="outglow-color" placeholder="hex颜色">
+                        </div>
+                        <div class="column">
+                            模糊 <input id="outglow-blur-value" type="range" step="1" max="50" min="0" value="0">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" id="shadow">
+                            <label class="label-inline" for="shadow">投影</label>
+                        </div>
+                        <div class="column">
+                            <input id="shadow-color" placeholder="hex颜色">
+                        </div>
+                        <div class="column">
+                            <input id="shadow-x" type="number" placeholder="X">
+                        </div>
+                        <div class="column">
+                            <input id="shadow-y" type="number" placeholder="Y">
+                        </div>
+                        <div class="column">
+                            模糊 <input id="shadow-blur-value" type="range" step="1" max="50" min="0" value="0">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <input class="button-primary" type="submit" value="发送">
+                </fieldset>
+            </form>
+
+            <p>
+            </p>
+        </div>
+    </div>
+
+    <!--    <div lj-type="layer" lj-native-scroll="false" id="arrows">-->
+    <!--        <div lj-type="frame" lj-fit-to="responsive" lj-start-position="center" lj-no-scrolling="true">-->
+    <!--                <a class="btn-left btn" href="#slider.!left&p=right">&lt;</a>-->
+    <!--                <a class="btn-right btn" href="#slider.!right&p=left">&gt;</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div lj-type="layer" id="minimenu" lj-default-frame="!none" lj-native-scroll="false">
+        <!-- the layer for the hamburger menu. It's not shown by default -->
+        <a href="#zoomout;frame1;minimenu.!none" lj-type="frame" id="hamburger" lj-start-position="top"
+           lj-fit-to="fixed" lj-transition="down" style="left:50px;">
+            <!-- the "hamburger" linking to the zoomed out state with the hamburger not shown. -->
+            &#x2630;
+        </a>
+    </div>
+
+</div>
+<script src="guy.js"></script>
+<script>
+    //window下function
+    function getname() {
+        var userid = $('#nameField').get(0).value;
+        var pwd = $('#pwdField').get(0).value;
+        return {'id': userid, 'pwd': pwd}
+    }
+
+    $(function () {
+
+        //按钮松开鼠标背景颜色#9b4dca
+        $('button').mouseup(function () {
+            $(this).blur();
+        })
+        //点击眼睛 密码显示与隐藏
+        $('#eyesvgnosee').click(function () {
+            $('#eyesvgnosee').hide();
+            $('#eyesvgsee').show();
+            $('#pwdField').attr("type", 'text');
+        });
+        $('#eyesvgsee').click(function () {
+            $('#eyesvgsee').hide();
+            $('#eyesvgnosee').show();
+            $('#pwdField').attr("type", 'password');
+        });
+        //color picker
+        const pickr = Pickr.create({
+            el: '.color-picker',
+            theme: 'monolith', // or 'monolith', or 'nano'
+            default: '#ec4556',//默认颜色
+            swatches: [],
+            i18n: {
+                'btn:save': '保存'
+            },
+            components: {
+
+                // Main components
+                preview: true,
+                opacity: true,
+                hue: true,
+
+                // Input / output Options
+                interaction: {
+                    input: true,
+                    save: true
+                }
+            }
+        });
+        pickr.on('init', instance => {
+
+            // Grab actual input-element
+            const {result} = instance.getRoot().interaction;
+
+            // Listen to any key-events
+            result.addEventListener('keydown', e => {
+
+                // Detect whever the user pressed "Enter" on their keyboard
+                if (e.key === 'Enter') {
+                    instance.applyColor(); // Save the currently selected color
+                    instance.hide(); // Hide modal
+                }
+            }, {capture: true});
+        });
+
+        //发送登录请求
+        //第一次点击登录按钮时绑定函数
+        $('#btnLogin').click(function () {
+            $('#btnLogin').attr("onclick", 'self.login()');
+        });
+
+        $('#btnJump').click(function () {
+            returnValue = false;
+            $.get('https://www.acfun.cn/login', function (d) {
+                console.log(d);
+                // $('#mydiv').html(d);
+
+            });
+        });
+
+    })
+</script>
+</body>
+</html>

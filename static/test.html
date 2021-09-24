@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+html {
+  height:100%;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  height: 100%;
+}
+
+[lj-type="stage"] {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#mainstage {
+  background: #7d7e7d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top, #7d7e7d 0%, #0e0e0e 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#zoomout, #zoomin {
+  width: 100vw;
+  height: 100vh;
+}
+
+#zoomout {
+  padding: 5vw;
+  color: white;
+}
+
+#zoomout h1 {
+  color: #60C694;
+  font-size: 48px;
+}
+@media (max-device-width: 520px) {
+  #zoomout h1 {
+    color: #60C694;
+    font-size: 42px;
+  }
+}
+
+#zoomout p {
+  max-width: 500px;
+}
+
+#zoomin {
+  left: 5vw;
+  top: 70vh;
+}
+
+#contentlayer, #contentstage, #contentlayer>div {
+  overflow: visible;
+}
+
+#contentlayer [lj-type="frame"] {
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px black;
+  //filter: contrast(1) sepia(100%) hue-rotate(116deg) brightness(1.4) saturate(0.28);
+  filter: saturate(0);
+}
+#zoomin.lj-active #contentlayer [lj-type="frame"].lj-active {
+  filter: saturate(0.5);
+}
+#contentlayer [lj-type="frame"]:hover {
+  filter: saturate(0.5);
+}
+
+#frame1 {}
+
+#frame2 {
+  left: 120vw;
+}
+
+#frame3 {
+  left: 240vw;
+}
+
+#frame4 {
+  left: 360vw;
+}
+
+#frame5 {
+  left: 480vw;
+}
+.coverlink {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+.coverlink:hover {
+  background-color: gray;
+  opacity: 0.5;
+}
+#zoomin.lj-active .coverlink {
+  width: 0px;
+  height: 0px;
+}
+#hamburger {
+  margin: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #60C694;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px gray;
+}
+a {
+  text-decoration: none;
+  color: #60C694;
+}
+
+    </style>
+    <script src="https://keycdn.layerjs.org/libs/layerjs/layerjs-0.6.4.min.js"></script>
+    <link href="https://keycdn.layerjs.org/libs/layerjs/layerjs-0.6.4.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Add a main stage. -->
+<div lj-type="stage" id="mainstage">
+  <!-- The layer for the zoom menu. By default the zoomed out state is shown. -->
+  <div lj-type="layer" lj-default-frame="zoomout" lj-layout="canvas">
+    <!-- The frame showing everything in the zoomed out state -->
+    <div lj-type="frame" id="zoomout" lj-fit-to="fixed">
+      <h1>Abitrage Ipsum Momentum</h1>
+      <h2>Beware of the Little White Rabbit</h2>
+      <p>
+        Click on one of the content frames below to get the details. Swipe to switch between them. Use the menu icon in the frames to get back to the main menu.
+      </p>
+    </div>
+    <!-- The zoomed in frame only showing the current content frame, position is set in CSS but scale must be set with lj-scale, as css transform will be overwritten by layerJS -->
+    <div lj-type="frame" id="zoomin" lj-fit-to="fixed" lj-scale="0.25">
+      <!-- The stage that handles the transitions between the content frames -->
+      <div lj-type="stage" id="contentstage">
+        <!-- The layer for the content frames -->
+        <div lj-type="layer" id="contentlayer" lj-layout="canvas" lj-native-scroll="false">
+          <!-- 1st content frame. -->
+          <!-- Note: swiping left/right in zoomed in state is not working because the iframe will swallow the mouse event. See https://cdn.layerjs.org/examples/zoom-noiframe/index.html for an example w/o iframes-->
+          <div lj-type="frame" id="frame1" lj-fit-to="responsive" lj-neighbors.r="frame2">
+            <a class="coverlink" href="#frame1;zoomin;minimenu.hamburger"></a>
+            <!-- an overlay linking to the zoomed in state, to frame1 in the inner layer and to the hamburger menu in the minimenu layer -->
+            <iframe width="100%" height="100%" frameborder="0" src="https://techcrunch.com/2017/04/03/apple-gpu-tech/amp/"></iframe>
+            <!-- We use an external iframe to not clutter this example with content. -->
+          </div>
+          <!-- the next content frame -->
+          <div lj-type="frame" id="frame2" lj-fit-to="responsive" lj-neighbors.r="frame3" lj-neighbors.l="frame1">
+            <a class="coverlink" href="#frame2;zoomin;minimenu.hamburger"></a>
+            <iframe width="100%" height="100%" frameborder="0" src="https://www.wired.com/2017/03/yes-spider-man-can-jump-6-meters-onto-moving-ferry-physics-says/?amp=1"></iframe>
+          </div>
+          <div lj-type="frame" id="frame3" lj-fit-to="responsive" lj-neighbors.r="frame4" lj-neighbors.l="frame2">
+            <a class="coverlink" href="#frame3;zoomin;minimenu.hamburger"></a>
+            <iframe width="100%" height="100%" frameborder="0" src="https://venturebeat.com/2017/04/02/understanding-the-limits-of-deep-learning/amp/"></iframe>
+          </div>
+          <div lj-type="frame" id="frame4" lj-fit-to="responsive" lj-neighbors.l="frame3">
+            <a class="coverlink" href="#frame4;zoomin;minimenu.hamburger"></a>
+            <iframe width="100%" height="100%" frameborder="0" src="https://techcrunch.com/2017/04/03/statcounter-android-windows/amp/"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div lj-type="layer" id="minimenu" lj-default-frame="!none" lj-native-scroll="false">
+    <!-- the layer for the hamburger menu. It's not shown by default -->
+    <a href="#zoomout;frame1;minimenu.!none" lj-type="frame" id="hamburger" lj-start-position="top" lj-fit-to="fixed" lj-transition="down">
+      <!-- the "hamburger" linking to the zoomed out state with the hamburger not shown. -->
+      &#x2630;
+    </a>
+  </div>
+</div>
+</body>
+</html>

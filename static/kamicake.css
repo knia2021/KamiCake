@@ -1,0 +1,107 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+[lj-type="stage"] {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+}
+
+.menu {
+    width: 200px;
+    box-shadow: 0px 0px 10px 1px #888;
+}
+
+.content {
+    box-sizing: border-box;
+    padding: 60px 20px;
+}
+
+.close {
+    position: absolute;
+    right: 0px;
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav {
+    background-color: #58585a;
+    color: #ccc;
+    font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #666;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #eee;
+    color: #777;
+}
+
+.nav-hor {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.nav-hor:hover {
+    background-color: #58585a;
+}
+
+#btnLogin {
+    margin-left: 2px;
+}
+
+#locksvg, #usersvg {
+    position: relative;
+    left: 9px;
+    top: 33px;
+}
+
+#pwdField, #nameField {
+    padding-left: 26px;
+    padding-top: 7px;
+    color: #606c76;
+}
+
+#eyesvgsee,#eyesvgnosee {
+    position: absolute;
+    right: 13px;
+    bottom: 51px;
+}
+
+#eyesvgsee{
+    display: none;
+}
+
+/*button:hover{*/
+/*    background-color: #70808e !important;*/
+/*    border: 0.1rem solid #70808e;*/
+/*}*/
